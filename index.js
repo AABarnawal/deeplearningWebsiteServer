@@ -23,7 +23,7 @@ var nameid;
 //middleware
 app.use(express.json());
 app.use(cors({
-    origin : 'http://localhost:3000',
+    origin : 'https://aabarnawal.github.io/deeplearningWebsiteClient/',
     methods : 'GET, POST,PUT, DELETE',
     credentials : true
 }));
@@ -100,8 +100,8 @@ passport.deserializeUser((user, done)=>{
 // initial google login
 app.get("/auth/google",passport.authenticate("google",{scope : ["profile", "email"]}));
 app.get("/auth/google/callback",passport.authenticate("google", {
-    successRedirect : "http://localhost:3000/dash",
-    failureRedirect : "http://localhost:3000/"
+    successRedirect : "https://aabarnawal.github.io/deeplearningWebsiteClient//dash",
+    failureRedirect : "https://aabarnawal.github.io/deeplearningWebsiteClient/"
 }))
 
 //login
@@ -118,7 +118,7 @@ app.get("/login/sucess", (req, res)=>{
 app.get('/logout', (req, res, next)=>{
     req.logOut(function(err){
         if(err){return next(err)}
-        res.redirect("http://localhost:3000/")
+        res.redirect("https://aabarnawal.github.io/deeplearningWebsiteClient/")
     })
 })
 
