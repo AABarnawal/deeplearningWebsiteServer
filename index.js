@@ -100,7 +100,7 @@ passport.deserializeUser((user, done)=>{
 // initial google login
 app.get("/auth/google",passport.authenticate("google",{scope : ["profile", "email"]}));
 app.get("/auth/google/callback",passport.authenticate("google", {
-    successRedirect : "https://aabarnawal.github.io/deeplearningWebsiteClient//dash",
+    successRedirect : "https://aabarnawal.github.io/deeplearningWebsiteClient/dash",
     failureRedirect : "https://aabarnawal.github.io/deeplearningWebsiteClient/"
 }))
 
